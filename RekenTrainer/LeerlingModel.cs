@@ -173,6 +173,7 @@ namespace RekenTrainer
 			{
 				Getal1 = randomGenerator.Next(0, Maxgetal + 1);
 				Getal2 = randomGenerator.Next(0, Maxgetal + 1);
+				PlusOfMin = randomGenerator.Next(0, 2);
 				if (Klas == "1ste Leerjaar" || Klas == "2de Leerjaar")
 				{
 					while (Getal1 < Getal2)
@@ -180,13 +181,12 @@ namespace RekenTrainer
 						Getal1 = randomGenerator.Next(0, Maxgetal + 1);
 					}
 				}
-				PlusOfMin = randomGenerator.Next(0, 2);
 				RandomLijst.Add(new LeerlingModel(Getal1, Getal2, PlusOfMin));
 			}
 			
 		}
 
-		public void PlusOfMinGenereren(int plusOfMin)
+		public void PlusOfMinGenereren()
 		{
 			if (PlusOfMin == 1)
 			{
@@ -234,8 +234,7 @@ namespace RekenTrainer
 		public void AntwoordBerekenen()
 		{
 			{
-				//foreach (LeerlingModel UitkomstBerekenen in RandomLijst)
-				//{
+				
 					if (PlusOfMin == 1)
 					{
 						Uitkomst = Getal1 - Getal2;
@@ -244,6 +243,7 @@ namespace RekenTrainer
 					{
 						Uitkomst = Getal1 + Getal2;
 					}
+
 					AntwoordEnUitkomstLijst.Add(new LeerlingModel(Uitkomst, Antwoord));
 
 				//}
@@ -266,6 +266,7 @@ namespace RekenTrainer
 			{
 				Antwoord = null;
 			}
+
 			
 			++StappenTeller;
 		}
