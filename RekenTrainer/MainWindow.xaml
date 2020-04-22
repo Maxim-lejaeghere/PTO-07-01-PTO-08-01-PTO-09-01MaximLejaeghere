@@ -41,8 +41,8 @@
         <TextBox Grid.Row="1" Grid.Column="1" Name="txtAchternaam" HorizontalAlignment="Center" Text=""  Width="176" FontSize="20" Height="35" Foreground="ForestGreen"/>
         <TextBox Grid.Row="2" Grid.Column="3" Name="txtUitkomst" HorizontalAlignment="Center" Text=""  Width="176" FontSize="20" Height="35" Foreground="ForestGreen"/>
         <Button Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0" Name="btnStarten"   Content ="Starten" Margin="15.2,6,14.4,0" FontSize="25" Height="48" VerticalAlignment="Top" Foreground="White" Background="ForestGreen" Click="btnStarten_Click"/>
-        <Button Grid.Row="4" Grid.Column="2" Name="btnResultaat" IsEnabled="False" Content ="Resultaat" Margin="15.2,6,14.4,0" FontSize="20" Height="48" VerticalAlignment="Top"  Foreground="White" Background="ForestGreen" Click="btnResultaat_Click"/>
-        <Button Grid.Row="4" Grid.Column="3" Name="btnHerstarten" IsEnabled="False" Content ="Herstart" Margin="15.2,6,14.4,0" FontSize="20" Height="48" VerticalAlignment="Top"  Foreground="White" Background="ForestGreen" Click="btnHerstarten_Click"/>
+        <Button Grid.Row="4" Grid.Column="2" Name="btnIngeven" IsEnabled="False" Content ="Resultaat" Margin="15.2,6,14.4,0" FontSize="20" Height="48" VerticalAlignment="Top"  Foreground="White" Background="ForestGreen" Click="btnIngeven_Click"/>
+        <Button Grid.Row="4" Grid.Column="3" Name="btnResultaat" IsEnabled="False" Content ="Resultaat" Margin="15.2,6,14.4,0" FontSize="20" Height="48" VerticalAlignment="Top"  Foreground="White" Background="ForestGreen"/>
     </Grid>
 </Window>
     

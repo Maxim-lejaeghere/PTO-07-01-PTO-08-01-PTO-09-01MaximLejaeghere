@@ -34,16 +34,16 @@ namespace RekenTrainer
 
         private void btnResultaat_Click(object sender, RoutedEventArgs e)
         {
-            
-            if (leerlingIngave.StappenTeller < leerlingIngave.RandomLijst.Count)
-            {
-                leerlingIngave.Getal1 = leerlingIngave.RandomLijst[leerlingIngave.StappenTeller].Getal1;
-                leerlingIngave.Getal2 = leerlingIngave.RandomLijst[leerlingIngave.StappenTeller].Getal2;
-                leerlingIngave.PlusOfMin = leerlingIngave.RandomLijst[leerlingIngave.StappenTeller].PlusOfMin;
-                lblOpgave.Content = $"{leerlingIngave.Getal1} {leerlingIngave.PlusOfMinTekst} {leerlingIngave.Getal2} = ?";
-                leerlingIngave.VerderZettenLoop(txtUitkomst.Text);
-            }
+            leerlingIngave.VerderZettenLoop(txtUitkomst.Text);
             leerlingIngave.AntwoordBerekenen();
+            
+            if (leerlingIngave.StappenTeller -1 < leerlingIngave.RandomLijst.Count)
+            {
+                leerlingIngave.PlusOfMinGenereren(leerlingIngave.RandomLijst[leerlingIngave.StappenTeller - 1].PlusOfMin);
+                leerlingIngave.Getal1 = leerlingIngave.RandomLijst[leerlingIngave.StappenTeller - 1].Getal1;
+                leerlingIngave.Getal2 = leerlingIngave.RandomLijst[leerlingIngave.StappenTeller - 1].Getal2;
+                lblOpgave.Content = $"{leerlingIngave.Getal1} {leerlingIngave.PlusOfMinTekst} {leerlingIngave.Getal2} = ?";
+            }
             if (leerlingIngave.StappenTeller - 1 == leerlingIngave.RandomLijst.Count)
             {
                 btnHerstarten.IsEnabled = true;
@@ -63,7 +63,7 @@ namespace RekenTrainer
         private void btnStarten_Click(object sender, RoutedEventArgs e)
         {
 
-            leerlingIngave.StappenTeller = 0;
+            leerlingIngave.StappenTeller = 0; /// test
             leerlingIngave.Klas = comboLeerjaar.Text;
             leerlingIngave.AantalOpgavenNaarInt(txtUitkomst.Text);
             if (comboLeerjaar.SelectedItem != null && txtVoornaam.Text != string.Empty && txtAchternaam.Text != string.Empty && leerlingIngave.AantalOpgaven != 0)
@@ -75,7 +75,6 @@ namespace RekenTrainer
                 leerlingIngave.PlusOfMinGenereren(leerlingIngave.RandomLijst[leerlingIngave.StappenTeller].PlusOfMin);
                 leerlingIngave.Getal1 = leerlingIngave.RandomLijst[leerlingIngave.StappenTeller].Getal1;
                 leerlingIngave.Getal2 = leerlingIngave.RandomLijst[leerlingIngave.StappenTeller].Getal2;
-                leerlingIngave.PlusOfMin = leerlingIngave.RandomLijst[leerlingIngave.StappenTeller].PlusOfMin;
                 lblOpgave.Content = $"{leerlingIngave.Getal1} {leerlingIngave.PlusOfMinTekst} {leerlingIngave.Getal2} = ?";
                 lblStart.Content = "Geef het juiste Antwoord!";
                 lblUitkomst.Content = "Uitkomst";
@@ -88,6 +87,25 @@ namespace RekenTrainer
                 lblStart.Content = "Zorg dat alles is ingevuld";
             }
 
+        }
+
+        private void btnIngeven_Click(object sender, RoutedEventArgs e)
+        {
+            leerlingIngave.VerderZettenLoop(txtUitkomst.Text);
+            leerlingIngave.AntwoordBerekenen();
+
+            if (leerlingIngave.StappenTeller - 1 < leerlingIngave.RandomLijst.Count)
+            {
+                leerlingIngave.PlusOfMinGenereren(leerlingIngave.RandomLijst[leerlingIngave.StappenTeller - 1].PlusOfMin);
+                leerlingIngave.Getal1 = leerlingIngave.RandomLijst[leerlingIngave.StappenTeller - 1].Getal1;
+                leerlingIngave.Getal2 = leerlingIngave.RandomLijst[leerlingIngave.StappenTeller - 1].Getal2;
+                lblOpgave.Content = $"{leerlingIngave.Getal1} {leerlingIngave.PlusOfMinTekst} {leerlingIngave.Getal2} = ?";
+            }
+            if (leerlingIngave.StappenTeller - 1 == leerlingIngave.RandomLijst.Count)
+            {
+                btnHerstarten.IsEnabled = true;
+                btnResultaat.IsEnabled = false;
+            }
         }
     }
 }

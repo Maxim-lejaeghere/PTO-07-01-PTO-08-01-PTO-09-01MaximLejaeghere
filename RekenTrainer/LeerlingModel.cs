@@ -229,26 +229,25 @@ namespace RekenTrainer
 			{
 				RandomGetallenGeneren(100);
 			}
-			AntwoordBerekenen();
 		}
 
 		public void AntwoordBerekenen()
 		{
 			{
-				foreach (LeerlingModel UitkomstBerekenen in RandomLijst)
-				{
+				//foreach (LeerlingModel UitkomstBerekenen in RandomLijst)
+				//{
 					if (PlusOfMin == 1)
 					{
-						UitkomstBerekenen.Uitkomst = UitkomstBerekenen.Getal1 - UitkomstBerekenen.Getal2;
+						Uitkomst = Getal1 - Getal2;
 					}
 					else
 					{
-						UitkomstBerekenen.Uitkomst = UitkomstBerekenen.Getal1 + UitkomstBerekenen.Getal2;
+						Uitkomst = Getal1 + Getal2;
 					}
-					AntwoordEnUitkomstLijst.Add(new LeerlingModel(Uitkomst, null));
+					AntwoordEnUitkomstLijst.Add(new LeerlingModel(Uitkomst, Antwoord));
 
-				}
-				
+				//}
+				 
 				
 			}
 			
