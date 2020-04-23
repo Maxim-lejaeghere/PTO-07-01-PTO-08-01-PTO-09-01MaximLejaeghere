@@ -13,12 +13,6 @@ namespace RekenTrainer
 		Random randomGenerator = new Random();
 
 		//fields
-		private int _randomGetal;
-		public int RandomGetal
-		{
-			get { return _randomGetal; }
-			set { _randomGetal = value; }
-		}
 
 		
 		private int _getal1;
@@ -51,23 +45,6 @@ namespace RekenTrainer
 		{
 			get { return _PlusOfMinTekst; }
 			set { _PlusOfMinTekst = value; }
-		}
-
-
-		private string _achternaam;
-
-		public string Achternaam
-		{
-			get { return _achternaam; }
-			set { _achternaam = value; }
-		}
-
-		private string _voornaam;
-
-		public  string Voornaam
-		{
-			get { return _voornaam; }
-			set { _voornaam = value; }
 		}
 
 		private string _klas;
@@ -271,9 +248,6 @@ namespace RekenTrainer
 			++StappenTeller;
 		}
 		
-		
-		
-			
 		
 	}
 }

@@ -32,8 +32,6 @@ namespace RekenTrainer
 
         private void btnStarten_Click(object sender, RoutedEventArgs e)
         {
-
-            leerlingIngave.StappenTeller = 0; 
             leerlingIngave.Klas = comboLeerjaar.Text;
             leerlingIngave.AantalOpgavenNaarInt(txtUitkomst.Text);
             if (comboLeerjaar.SelectedItem != null && txtVoornaam.Text != string.Empty && txtAchternaam.Text != string.Empty && leerlingIngave.AantalOpgaven != 0)
@@ -89,7 +87,13 @@ namespace RekenTrainer
             txtAchternaam.Text = string.Empty;
             txtUitkomst.Text = string.Empty;
             txtVoornaam.Text = string.Empty;
+            comboLeerjaar.SelectedItem = false;
             lblStart.Content = "Druk op starten om te beginnen!";
+            leerlingIngave.RandomLijst.Clear();
+            leerlingIngave.AntwoordEnUitkomstLijst.Clear();
+            leerlingIngave.StappenTeller = 0;
+            btnResultaat.IsEnabled = false;
+            btnStarten.IsEnabled = true;
         }
     }
 }
